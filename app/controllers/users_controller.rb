@@ -16,10 +16,12 @@ class UsersController < ApplicationController
     def show
       if logged_in?
         @user = User.find_by(id: params[:id])
+        @event = Event.new
         render :show
       else
         redirect_to root_path
       end
+      
     end
 
     private

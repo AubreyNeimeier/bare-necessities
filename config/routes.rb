@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :users, only: :show
   root 'welcome#index'
   resources :tasks
 
@@ -8,10 +9,12 @@ Rails.application.routes.draw do
   end
 
   get '/signup' =>'users#new'
-  post '/signup' => 'sessions#new'
+  post '/signup' => 'users#create'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get  '/logout' => 'sessions#destroy'
+
+  
 
  
 

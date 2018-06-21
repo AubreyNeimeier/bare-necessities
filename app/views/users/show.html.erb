@@ -1,3 +1,6 @@
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'POST'}) do %>
+  <input type="submit" value="Log Out">
+  <% end %>
 <h1> Month </h1>
 </p><%= @user.username %>'s calendar </p>
 <hr>
@@ -65,3 +68,4 @@
     <%=f.submit "Create Event"%>
 <% end %>
 </div> 
+

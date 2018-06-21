@@ -8,6 +8,25 @@ class EventsController < ApplicationController
     def show
         @event = Event.find_by(id: params[:id])
     end
+     
+    def edit 
+        @event = Event.find_by(id: params[:id])
+    end
+
+    def update
+        @event = Event.find_by(id: params[:id])
+        @event.title = params[:event][:title]
+        @event.date = Date.new(params[:event]["date(1i)"].to_i, params[:event]["date(2i)"].to_i, params[:event]["date(3i)"].to_i)
+        @event.start_time = params[:event][:start_time]
+        @event.end_time = params[:event][:start_time]
+        if @event.update
+            redirect_to event_path(@event)
+        else
+            redirect_to edit_event_path(@event)
+        end
+
+        
+    end
 
 
     def create
@@ -24,6 +43,13 @@ class EventsController < ApplicationController
         end
 
     end
+
+    def destroy
+        @event = Event.find_by(id: params[:id])
+        @event.destroy
+        redirect_to user_path(current_user.id)
+    end
+
 
     
 

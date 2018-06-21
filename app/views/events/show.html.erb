@@ -3,4 +3,4 @@ on <%= @event.date %> from <%=@event.start_time%> until <%=@event.end_time %>
 <p><%= @event.description %></p>
 
 <%= link_to "Edit this event", edit_event_path(@event) %><br>
-<%= link_to "Delete this event", destroy_path(@event) %><br>
+<%= link_to "Delete this event", event_path(@event), method: 'delete' %><br>

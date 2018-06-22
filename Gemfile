@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-
+gem "omniauth-google-oauth2", "~> 0.2.1"
 ruby '2.3.6'
 gem 'bcrypt'
 gem 'pry'

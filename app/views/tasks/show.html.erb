@@ -1,5 +1,8 @@
+<%= link_to "Back", user_path(@event.user) %>
+<div class="show_content">
 TASK SHOW <br>
 
-To Do: <%= @task.description %><br>
+To Do: <p><%= @task.description %></p><br>
 This task is <%= @task.status %><br>
-See all tasks related to <%= link_to @task.event.title, event_path(@task.event) %>
+See all tasks related to <%= link_to @task.event.title, event_path(@task.event)%>
+</div>

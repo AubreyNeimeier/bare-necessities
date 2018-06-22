@@ -1,12 +1,14 @@
+<%= link_to "Back", user_path(@event.user) %>
+<div class="show_content">
 <h1><%= @event.title.titleize %></h1> 
 on <%= @event.date %> from <%=@event.start_time%> until <%=@event.end_time %>
 <p><%= @event.description.titleize %></p>
 
-<%= link_to "Edit this event", edit_event_path(@event) %><br>
-<%= link_to "Delete this event", event_path(@event), method: 'delete' %><br>
+<%= link_to "Edit", edit_event_path(@event)%> <%= link_to "Delete", event_path(@event), method: 'delete' %><br>
 <h3> TO DO </h3>
 <hr>
 
 <ol><% @event.tasks.each do |task| %>
     <li><%= link_to task.description, event_task_path(@event, task)  %></li>
 <% end %> </ol>
+</div>

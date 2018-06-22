@@ -7,6 +7,6 @@ on <%= @event.date %> from <%=@event.start_time%> until <%=@event.end_time %>
 <h3> TO DO </h3>
 <hr>
 
-<ol><%= @event.tasks.each do |task| %>
-    <li><%= link_to task.description, event_task_path(@event, @event.task)  %></li>
+<ol><% @event.tasks.each do |task| %>
+    <li><%= link_to task.description, event_task_path(@event, task)  %></li>
 <% end %> </ol>

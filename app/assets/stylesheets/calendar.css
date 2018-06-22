@@ -36,3 +36,9 @@ h1.month_title {
 * {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
+
+h2.home_page{
+    text-align:center;
+    background-color: beige;
+    padding: 5px 5px;
+}

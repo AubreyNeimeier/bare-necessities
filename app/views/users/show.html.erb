@@ -52,31 +52,33 @@
 
 <hr>
 <hr>
+<h2 class="home_page">Add an Event</h2>
 <div class="new_event_form fields_with_errors">
-<%= form_for(@event) do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %><br>
-    <%= f.label :description %>
-    <%= f.text_field :description %><br>
-    <%= f.label :date %>
-    <%= f.date_select :date %><br>
-    <%= f.label :start_time %>
-    <%= f.text_field :start_time %><br>
-    <%= f.label :end_time %>
-    <%= f.text_field :end_time %><br>
+  <%= form_for(@event) do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %><br>
+      <%= f.label :description %>
+      <%= f.text_field :description %><br>
+      <%= f.label :date %>
+      <%= f.date_select :date %><br>
+      <%= f.label :start_time %>
+      <%= f.text_field :start_time %><br>
+      <%= f.label :end_time %>
+      <%= f.text_field :end_time %><br>
 
-    <%=f.submit "Create Event"%>
-<% end %>
+      <%=f.submit "Create Event"%>
+  <% end %>
 </div> 
+<h2 class="home_page">Add a Task</h2>
 
 <div class="new_task_form fields_with_errors">
-<%= form_for(@task) do |f| %>
-    <%= f.label :event_id %>
-    <%= f.collection_select :event_id, Event.all, :id, :title, {:prompt => "Select Related Event"}%><br>
-    <%= f.label :description %>
-    <%= f.text_field :description %><br>
-    <%= f.label :status %>
-    <%= f.text_field :status %><br>
-    <%=f.submit "Create Task"%>
-<% end %>
+  <%= form_for(@task) do |f| %>
+      <%= f.label :event_id %>
+      <%= f.collection_select :event_id, Event.all, :id, :title, {:prompt => "Select Related Event"}%><br>
+      <%= f.label :description %>
+      <%= f.text_field :description %><br>
+      <%= f.label :status %>
+      <%= f.text_field :status %><br>
+      <%=f.submit "Create Task"%>
+  <% end %>
 </div> 

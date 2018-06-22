@@ -1,8 +1,8 @@
 class TasksController < ApplicationController 
-    before_action :require_logged_in
+    before_action :require_login
     def show
-        @event = Event.find_by(id: params[:id])
-        @task = Task.find_by(id: params[:task_id])
+        @task = Task.find_by(id: params[:id])
+        #binding.pry
     end
 
 
@@ -21,7 +21,10 @@ class TasksController < ApplicationController
     private
 
     def task_params
-        params.require(:task).permit(:event_id, :description, :status)
+        params.require(:task).permit(:event_id, :description, :status, :id)
     end
 
+    def require_login
+        return redirect_to(controller: 'sessions', action: 'new') unless logged_in?
+    end
 end

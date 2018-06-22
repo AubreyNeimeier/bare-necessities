@@ -1,0 +1,5 @@
+TASK SHOW <br>
+
+To Do: <%= @task.description %><br>
+This task is <%= @task.status %><br>
+See all tasks related to <%= link_to @task.event.title, event_path(@task.event) %>

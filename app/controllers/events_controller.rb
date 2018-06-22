@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-    before_action :require_logged_in
+    before_action :require_login
     def new
         @event = Event.new
 
@@ -54,6 +54,9 @@ class EventsController < ApplicationController
         params.require(:event).permit(:title, :description, :start_time, :end_time, "date(1i)", "date(2i)", "date(3i)")
     end
 
+    def require_login
+        return redirect_to(controller: 'sessions', action: 'new') unless logged_in?
+    end
 
 end
 

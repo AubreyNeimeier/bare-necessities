@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     end
 
     def create
-        user = User.find_by(username: params[:user][:username])
+        
         if params[:user][:username]
             login_with_credentials
         else
@@ -19,7 +19,8 @@ class SessionsController < ApplicationController
     end
     
     def login_with_credentials
-        if user.authenticate(params[:user][:password])
+        user = User.find_by(username: params[:user][:username])
+        if user && user.authenticate(params[:user][:password])
             session[:user_id] = user.id
             @user = user
             redirect_to user_path(@user)

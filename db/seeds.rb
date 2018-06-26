@@ -18,5 +18,7 @@ task_one.event = b
 task_two = Task.create(description: "Pack a lunch", status: "open")
 task_two.event = a
 
+aubs = User.create(username: "aubs", password: "password")
+
 
 

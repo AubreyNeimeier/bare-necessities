@@ -17,6 +17,7 @@ class EventsController < ApplicationController
         @event = Event.find_by(id: params[:id])
         # @event.date = Date.new(params[:event]["date(1i)"].to_i, params[:event]["date(2i)"].to_i, params[:event]["date(3i)"].to_i)
          if @event.update(event_params)
+            #update date object? event.date_object = @event.date.to_date
             redirect_to event_path(@event)
         else
             redirect_to edit_event_path(@event)
@@ -28,7 +29,7 @@ class EventsController < ApplicationController
         @event = Event.new(event_params)
         @event.user = current_user
         @event.date = Date.new(params[:event]["date(1i)"].to_i, params[:event]["date(2i)"].to_i, params[:event]["date(3i)"].to_i)
-        #binding.pry
+        @event.date_object = @event.date.to_date
         
         if @event.save
             redirect_to event_path(@event)
@@ -51,7 +52,7 @@ class EventsController < ApplicationController
     private
     
     def event_params
-        params.require(:event).permit(:title, :description, :start_time, :end_time, "date(1i)", "date(2i)", "date(3i)")
+        params.require(:event).permit(:title, :description, :start_time, :end_time, "date(1i)", "date(2i)", "date(3i)", :date_object)
     end
 
     def require_login

@@ -5,6 +5,9 @@ class SessionsController < ApplicationController
     end
 
     def create
+        binding.pry
+        if auth_hash = request.env["omniauth.auth"]
+            #they logged in via OAuth
         
         if params[:user][:username]
             login_with_credentials

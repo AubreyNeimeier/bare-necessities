@@ -5,15 +5,17 @@ class SessionsController < ApplicationController
     end
 
     def create
-        binding.pry
+        #binding.pry
         if auth_hash = request.env["omniauth.auth"]
             #they logged in via OAuth
-        
-        if params[:user][:username]
-            login_with_credentials
+            user = User.find_or_create_by_omniauth(auth_hash)
+            session[:user_id] = user.id 
+            redirect_to user_path(user)
+    
         else
-            login_with_omni
-         end
+           login_with_credentials
+        end
+
     end
 
     def destroy
@@ -32,11 +34,6 @@ class SessionsController < ApplicationController
         end
     end
 
-    def login_with_omni
-        user = User.from_omniauth(env["omniauth.auth"])
-        session[:user_id] = user.id
-        redirect_to root_path
-    end
-
+  
 end
 

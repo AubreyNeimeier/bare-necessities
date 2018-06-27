@@ -1,7 +1,7 @@
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'POST'}) do %>
   <input type="submit" value="Log Out">
   <% end %>
-<h1 class="month_title"> Month </h1>
+<h1 class="month_title"> <%= month_name%> </h1>
 </p><%= @user.username %>'s calendar </p>
 <hr>
 <hr>
@@ -17,6 +17,8 @@
 </ul>
 
 <div class="grid-container">
+<% add_empty_divs %>
+<div></div><div></div><div></div><div></div>
 <% i = 1 %>
 <% while i <= days_in_month %> 
   <div class="<%= starting_div_class + i %>"><%= i %></div>

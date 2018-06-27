@@ -19,7 +19,7 @@
 <div class="grid-container">
 <% i = 1 %>
 <% while i <= days_in_month %> 
-  <div class="<% Date.today.to_formatted_s %>"><%= i %></div>
+  <div class="<%= starting_div_class + i %>"><%= i %></div>
   <% i += 1 %>
   <% end %> 
 </div>

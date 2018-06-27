@@ -1,6 +1,11 @@
 class ApplicationController < ActionController::Base
-    helper_method :current_user, :logged_in?, :require_login, :days_in_month
+    helper_method :current_user, :logged_in?, :require_login, :days_in_month, :starting_div_class
 
+    def starting_div_class
+        date = Date.today - Date.today.day
+    end
+
+    
     def days_in_month
         m = Date.today.month 
         y = Date.today.year

@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
-    helper_method :current_user, :logged_in?, :require_login
+    helper_method :current_user, :logged_in?, :require_login, :days_in_month
 
-  
+    def days_in_month
+        m = Date.today.month 
+        y = Date.today.year
+        days = Time.days_in_month(m, y)
+    end
+
     def require_login
         return redirect_to(controller: 'sessions', action: 'new') unless logged_in?
     end

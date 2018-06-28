@@ -1,6 +1,4 @@
 to do
-- config ssh key, finish omni auth
-    - download cert for ssh 
 - create great seed data. Events should have title, user, date, and date.object
 - create tasks for those events and begin generating HTML dynamically
 
@@ -10,3 +8,11 @@ to do
     - Report.weekly
     - Events.this_week
     
+
+
+    modify task select to only include the users evers ... not ALL events
+
+
+    link to "The Week Ahead"
+
+    Events/index action

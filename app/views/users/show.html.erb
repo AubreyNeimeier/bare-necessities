@@ -1,8 +1,8 @@
-<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'POST'}) do %>
-  <input type="submit" value="Log Out">
-  <% end %>
+
+  <%= link_to "See your Weekly Report", events_path %>
 <h1 class="month_title"> <%= month_name%> </h1>
 </p><%= @user.username %>'s calendar </p>
+
 <hr>
 <hr>
 <% stylesheet_link_tag "/calendar" %>

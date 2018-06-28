@@ -1,5 +1,11 @@
 class EventsController < ApplicationController
     before_action :require_login
+
+    def index 
+        @events = Event.collect_weekly_events
+        binding.pry
+    end
+
     def new
         @event = Event.new
 

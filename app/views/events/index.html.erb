@@ -1,0 +1,12 @@
+<h1> The Week Ahead </h1>
+<ul>
+<%= @events.each do |e| %>
+    <li><%= e.date %> - <%= e.title %> </li>
+        <ul>
+            <% e.tasks.each do |t| %>
+                <li> <%= t.description %></li>
+                <% end %>
+        </ul>
+    <% end %>
+</ul> 
+

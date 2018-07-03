@@ -30,14 +30,14 @@
 <hr>
 <hr>
 <h2 class="home_page">Add an Event</h2>
-<div class="new_event_form fields_with_errors">
+<div class="new_event_form">
   <%= form_for(@event) do |f| %>
       <%= f.label :title %>
       <%= f.text_field :title %><br>
       <%= f.label :description %>
       <%= f.text_field :description %><br>
       <%= f.label :date %>
-      <%= f.date_select :date %><br>
+      <%= f.date_select :date, selected: Date.today%><br>
       <%= f.label :start_time %>
       <%= f.text_field :start_time %><br>
       <%= f.label :end_time %>
@@ -46,6 +46,7 @@
       <%=f.submit "Create Event"%>
   <% end %>
 </div> 
+
 <h2 class="home_page">Add a Task</h2>
 
 <div class="new_task_form fields_with_errors">
@@ -59,3 +60,27 @@
       <%=f.submit "Create Task"%>
   <% end %>
 </div> 
+
+<% if @event.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@event.errors.count, "error") %> prohibited this EVENT from being saved:</h2>
+ 
+    <ul>
+    <% @event.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<% if @task.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@task.errors.count, "error") %> prohibited this article from being saved:</h2>
+ 
+    <ul>
+    <% @task.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: :show
   root 'welcome#index'
   resources :tasks
+ 
 
   resources :events do 
     resources :tasks, only: [:show, :edit]

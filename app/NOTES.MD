@@ -12,6 +12,8 @@ to do
 
     modify task select to only include the users evers ... not ALL events
 
+    modify weekly tasks to print in order
+
 
     link to "The Week Ahead"
 

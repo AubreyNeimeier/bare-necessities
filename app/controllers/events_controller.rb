@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 
     def index 
         @events = Event.collect_weekly_events
-        binding.pry
+        #binding.pry
     end
 
     def new
@@ -41,7 +41,10 @@ class EventsController < ApplicationController
             redirect_to event_path(@event)
           
         else
-            redirect_to user_path(current_user.id)
+            @event.date = Date.today
+            @user = current_user
+            @task = Task.new
+            render "users/show"
         end
 
     end

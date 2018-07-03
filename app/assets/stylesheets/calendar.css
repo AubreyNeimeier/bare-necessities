@@ -78,3 +78,9 @@ a:link, a:visited {
 a:hover, a:active {
     background-color: #000066;
 }
+.field_with_errors {
+    text-align: center;
+    padding: 2px;
+    background-color: red;
+    display: table;
+  }

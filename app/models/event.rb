@@ -14,7 +14,7 @@ class Event < ApplicationRecord
     end
 
     def self.collect_weekly_events
-       @events = Event.where("date_object >= ? AND date_object <=?", Date.today, Date.today + 7 )
+       @events = Event.where("date_object >= ? AND date_object <=?", Date.today, Date.today + 7 ).order(date_object: :asc)
        #binding.pry
     end
 

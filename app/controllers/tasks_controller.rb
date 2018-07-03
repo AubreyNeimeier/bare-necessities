@@ -12,7 +12,9 @@ class TasksController < ApplicationController
         if @task.save
             redirect_to task_path(@task)
         else
-            redirect_to user_path(@task.user)
+            @user = current_user
+            @event = Event.new
+            render "users/show"
         end
 
     end

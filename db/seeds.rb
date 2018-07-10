@@ -8,22 +8,9 @@
 
 
 #EVENTS
-a = Event.create!(title: "Work", description: "opener", date: "2018-07-08", date_object: "2018-7-08", start_time: "4pm", end_time: "5pm", user_id: 5 )
-b = Event.create!(title: "workout", description: "legs", date: "2018-07-04", date_object: "2018-07-04", start_time: "9pm", end_time: "10pm", user_id: 5 )
-c = Event.create(title: "yoga", description: "yoga", date: "2018-07-07", date_object: "2018-07-07", start_time: "7am", end_time: "8am", user_id: 5 )
-
-task_one = Task.create!(description: "wash workout clothes", status: "open", event_id: 13, user_id: 5)
-
-
-
-task_one_b = Task.create!(description: "charge bluetooth headphones", status: "open", event_id: 14, user_id: 5)
-
-
-
-task_two = Task.create!(description: "Pack a lunch", status: "open", event_id: 15, user_id: 5)
-
-
-task_three = Task.create!(description: "Schedule hot yoga class, clean mat", status: "open", event_id: 15, user_id: 5)
+a = Event.create!(title: "Work", description: "opener", date: "2018-07-10", date_object: "2018-7-10", start_time: "4pm", end_time: "5pm", user_id: 1 )
+b = Event.create!(title: "workout", description: "legs", date: "2018-07-11", date_object: "2018-07-11", start_time: "9pm", end_time: "10pm", user_id: 1 )
+c = Event.create(title: "yoga", description: "yoga", date: "2018-07-12", date_object: "2018-07-12", start_time: "7am", end_time: "8am", user_id: 1 )
 
 
 

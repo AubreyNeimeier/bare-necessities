@@ -11,10 +11,12 @@
 
   <body>
   <div>
-            <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
-            <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'POST'}) do %>
-              <input type="submit" value="Log Out">
-              <% end %>
+  <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'POST'}) do %>
+    <input type="submit" value="Log Out">
+    <% end %> 
+    <br>
+      <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" if !logged_in? %>
+    <br>
 
   <div>
     <%= yield %>

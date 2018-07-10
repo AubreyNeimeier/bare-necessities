@@ -1,10 +1,10 @@
 <h1> The Week Ahead </h1>
 <ul>
 <% @events.uniq.each do |e| %>
-    <li><%= e.date %> - <%= e.title %> </li>
+    <li><%= e.date %> - <%= link_to e.title, event_path(e) %> </li>
         <ul>
             <% e.tasks.each do |t| %>
-                <li> <%= t.description %></li>
+                <li><%= link_to t.description, event_task_path(e,t) %></li>
                 <% end %>
         </ul>
     <% end %>

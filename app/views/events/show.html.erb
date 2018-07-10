@@ -1,4 +1,5 @@
-<%= link_to "Back", user_path(@event.user_id) %>
+<%= link_to "back to report", events_path %>
+<%= link_to "home", user_path(@event.user_id) %>
 <div class="show_content">
 <h1><%= @event.title.titleize %></h1> 
 on <%= @event.date %> from <%=@event.start_time%> until <%=@event.end_time %>

@@ -18,8 +18,8 @@ class Event < ApplicationRecord
        #binding.pry
     end
 
-    def self.found_event(date)
-        @events = Event.where("date = ?", date)
+    def self.found_event(date, current_user)
+        @events = Event.where("date = ? AND user_id = ?", date, current_user.id)
     end
 
     

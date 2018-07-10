@@ -3,26 +3,27 @@
 <h1 class="month_title"> <%= month_name%> </h1>
 <% stylesheet_link_tag "/calendar" %>
 <ul class="weekdays">
+  <li>Sun</li>
   <li>Mon</li>
   <li>Tue</li>
   <li>Wed</li>
   <li>Thu</li>
   <li>Fri</li>
   <li>Sat</li>
-  <li>Sun</li>
 </ul>
 
 <div class="grid-container">
 <% add_empty_divs %>
-<div></div><div></div><div></div><div></div>
+
 <% i = 1 %>
 <% while i <= days_in_month %> 
   <div class="<%= starting_div_class + i %>"><%= i %>
  
     <% if Event.found_event(starting_div_class + i) %>
-      <% Event.found_event(starting_div_class + i).each do |event| %>
-        <%= event.title %>
+      <ul><% Event.found_event(starting_div_class + i).each do |event| %>
+        <li><%= event.title %></li>
       <% end %>
+      </ul>
     <% end %> 
   
   

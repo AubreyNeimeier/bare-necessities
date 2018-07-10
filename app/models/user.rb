@@ -29,4 +29,9 @@ class User < ApplicationRecord
         end
       end
 
+      def my_events
+        self.events
+      end
+      
+
 end

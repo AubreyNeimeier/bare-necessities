@@ -17,7 +17,16 @@
 <div></div><div></div><div></div><div></div>
 <% i = 1 %>
 <% while i <= days_in_month %> 
-  <div class="<%= starting_div_class + i %>"><%= i %></div>
+  <div class="<%= starting_div_class + i %>"><%= i %>
+ 
+    <% if Event.found_event(starting_div_class + i) %>
+      <% Event.found_event(starting_div_class + i).each do |event| %>
+        <%= event.title %>
+      <% end %>
+    <% end %> 
+  
+  
+  </div>
   <% i += 1 %>
   <% end %> 
 </div>

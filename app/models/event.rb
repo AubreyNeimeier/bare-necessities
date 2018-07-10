@@ -18,5 +18,9 @@ class Event < ApplicationRecord
        #binding.pry
     end
 
+    def self.found_event(date)
+        @events = Event.where("date = ?", date)
+    end
 
+    
 end

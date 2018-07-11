@@ -3,22 +3,22 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+## In order to get my application up and running
 
-* Ruby version
+1. Using the terminal from the project's parent directory, enter the following commands
+bundle install
+rake db:migrate
 
-* System dependencies
+2. Seed the database by entering command 
+rails db:seed
+3. Launch a local server with command 
+rails s 
+4. In your local browser, navigate to 
+http://localhost:3000
 
-* Configuration
+5. Create an account or Continue with Google
 
-* Database creation
+6. Add events and their related tasks with the forms on the homepage! 
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 * ...

@@ -1,5 +1,5 @@
 <h1>Sign Up Here! </h1>
-# the signup path routes to the users/new action, which should create a new user and log them in
+
 <%= form_for @user, url: signup_path, method: :post do |f| %>
     <%= f.label :username %>
     <%= f.text_field :username %>

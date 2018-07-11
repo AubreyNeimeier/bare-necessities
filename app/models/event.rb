@@ -6,7 +6,7 @@ class Event < ApplicationRecord
 
 
     def today
-        Date.today
+        Date.todays
     end
 
     def seven_days_later
@@ -14,12 +14,12 @@ class Event < ApplicationRecord
     end
 
     def self.collect_weekly_events
-       @events = Event.where("date_object >= ? AND date_object <=?", Date.today, Date.today + 7 ).order(date_object: :asc)
+        where("date_object >= ? AND date_object <=?", Date.today, Date.today + 7 ).order(date_object: :asc)
        #binding.pry
     end
 
     def self.found_event(date, current_user)
-        @events = Event.where("date = ? AND user_id = ?", date, current_user.id)
+        where("date = ? AND user_id = ?", date, current_user.id)
     end
 
     

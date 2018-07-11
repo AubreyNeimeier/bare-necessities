@@ -2,8 +2,31 @@ class TasksController < ApplicationController
     before_action :require_login
     def show
         @task = Task.find_by(id: params[:id])
+        @event = @task.event
         #binding.pry
     end
+
+    def edit
+        @event = Event.find_by(id: params[:event_id])
+        @task = Task.find_by(id: params[:id])
+    end
+
+    def update
+        @event = Event.find_by(id: params[:event_id])
+        @task = Task.find_by(id: params[:id])
+        @task.event = @event
+        binding.pry
+        if @task.update(task_params)
+            redirect_to event_task_path(@event, @task)
+        else
+            render edit_event_task_path(@event, @task)
+        end
+
+    end
+
+
+
+
 
 
     def create

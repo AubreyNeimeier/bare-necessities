@@ -1,13 +1,16 @@
-<div class="show_content week_ahead">
+<%= link_to "Home", user_path(@user) %>
+
+
 <h1> The Week Ahead </h1>
+<div class="week_ahead">
 <ul>
 <% @events.uniq.each do |e| %>
-    <li><%= e.date %> - <%= link_to e.title, event_path(e) %> </li>
+    <li><%= e.date_object.dayname %> - <%= link_to e.title, event_path(e) %> </li>
         <ul>
             <% e.tasks.each do |t| %>
                 <li><%= t.description %></li>
-                <% end %>
+            <% end %>
         </ul>
     <% end %>
-</ul> 
+</ul>
 </div>

@@ -73,6 +73,17 @@ a:link, a:visited {
     
 }
 
+ul li.week_ahead {
+    text-decoration: none;
+    text-align: center;
+    display: inline;
+}
+
+li.week_ahead_tasks {
+    text-decoration: none;
+}
+
+
 .show_content{
     text-align: center;
 }

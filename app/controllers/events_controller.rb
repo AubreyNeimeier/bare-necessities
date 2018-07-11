@@ -3,6 +3,7 @@ class EventsController < ApplicationController
 
     def index 
         @events = Event.collect_weekly_events
+        @user = current_user
         #binding.pry
     end
 
